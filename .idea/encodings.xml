@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/book-service/app/domain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/book-service/app/endpoints/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/book-service/app/repository/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/book-service/app/services/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/book-service/app/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/book-service/app/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/book-service/app/startup/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/book-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/book-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libUser-service/appUser/endpoint/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libUser-service/appUser/libUserDomain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libUser-service/appUser/libUserRepository/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libUser-service/appUser/service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libUser-service/appUser/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libUser-service/appUser/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libUser-service/appUser/startups/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libUser-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/libUser-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/transaction-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/transaction-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/transaction-service/transactionApp/TransactionDomain/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/transaction-service/transactionApp/TransactionEndpoints/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/transaction-service/transactionApp/TransactionRepository/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/transaction-service/transactionApp/TransactionServices/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/transaction-service/transactionApp/TransactionStartup/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/transaction-service/transactionApp/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/transaction-service/transactionApp/src/main/resources" charset="UTF-8" />
+  </component>
+</project>
