@@ -47,11 +47,11 @@ public class BookServiceImpl implements BookServices {
 
     }
 
-    @Override
-    public List<BookDTO> getAllBooksByYear(int year) {
-        List<Books> byYear = libRepository.findByYear(year);
-        return bookMapper.toListDto(byYear);
-    }
+//    @Override
+//    public List<BookDTO> getAllBooksByYear(int year) {
+//        List<Books> byYear = libRepository.findByYear(year);
+//        return bookMapper.toListDto(byYear);
+//    }
 
     @Override
     public List<BookDTO> getAllBooksByAuthor(String authorName) {

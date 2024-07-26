@@ -50,11 +50,11 @@ public class bookController {
 
     // Search related CRUD
 
-    @GetMapping("/get/year/{year}")
-    public ResponseEntity<List<BookDTO>> getBookByYear(@PathVariable int year) throws Exception {
-        List<BookDTO> allBooksByYear = bookServices.getAllBooksByYear(year);
-        return ResponseEntity.ok(allBooksByYear);
-    }
+//    @GetMapping("/get/year/{year}")
+//    public ResponseEntity<List<BookDTO>> getBookByYear(@PathVariable int year) throws Exception {
+//        List<BookDTO> allBooksByYear = bookServices.getAllBooksByYear(year);
+//        return ResponseEntity.ok(allBooksByYear);
+//    }
 
     @GetMapping("/get/author/{authorName}")
     public ResponseEntity<List<BookDTO>> getBookByAuthor(@PathVariable String authorName) throws Exception {

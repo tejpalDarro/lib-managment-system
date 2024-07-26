@@ -13,19 +13,25 @@
     <artifactId>service</artifactId>
 
     <dependencies>
-        <dependency>
-            <groupId>com.phenol</groupId>
-            <artifactId>endpoint</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
+
         <dependency>
             <groupId>com.phenol</groupId>
             <artifactId>repositorys</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
+            <groupId>com.transaction</groupId>
+            <artifactId>TransactionDomain</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
             <groupId>com.phenol</groupId>
             <artifactId>domains</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.phenol</groupId>
+            <artifactId>domain</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>

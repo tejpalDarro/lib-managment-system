@@ -2,6 +2,7 @@ package com.phenol.userEndpoints;
 
 import com.phenol.libuserservice.LibUserEntity;
 import com.phenol.libuserservice.dto.LibUserDTO;
+import com.phenol.transactionDomain.com.phenol.transactionDomain.TransactionDTO;
 import com.phenol.userService.UserServices;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -38,5 +39,11 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
+    // BorrowBooks
+
+    @PostMapping("/borrow/{id}")
+    public TransactionDTO createBorrow(@PathVariable Long id) {
+        return userServices.createBorrowBook(id);
+    }
 
 }

@@ -7,7 +7,7 @@ import java.util.List;
 
 @Repository
 public interface LibRepository extends JpaRepository<Books, Integer> {
-    List<Books> findByYear(int year);
+    //List<Books> findByYear(int year);
 
     List<Books> findByAuthorName(String authorName);
 

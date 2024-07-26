@@ -2,9 +2,11 @@ package com.phenol.userService.mapper;
 
 import com.phenol.libuserservice.LibUserEntity;
 import com.phenol.libuserservice.dto.LibUserDTO;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class LibUserMapper {
 
     public List<LibUserDTO> toListDto(List<LibUserEntity> entity) {
@@ -18,5 +20,6 @@ public class LibUserMapper {
         dto.setEmail(entity.getEmail());
         dto.setCreationDate(entity.getCreationDate());
         dto.setRoles(entity.getRoles());
+        return dto;
     }
 }

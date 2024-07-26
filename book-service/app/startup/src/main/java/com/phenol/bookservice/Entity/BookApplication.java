@@ -13,7 +13,6 @@ import java.sql.SQLException;
 @SpringBootApplication
 @EnableJpaRepositories(basePackageClasses = {LibRepository.class})
 @EntityScan(basePackageClasses = {com.phenol.bookservice.Entity.Books.class})
-@ComponentScan(basePackages = {"com.phenol.bookservice", "com.phenol.endpoints", "com.phenol.bookservice.Entity", "com.phenol.services"})
 public class BookApplication {
 
     public static void main(String[] args) {

@@ -14,7 +14,7 @@ public interface BookServices {
 
     void deleteBook(int id) throws Exception;
 
-    List<BookDTO> getAllBooksByYear(int year);
+    //List<BookDTO> getAllBooksByYear(int year);
 
     List<BookDTO> getAllBooksByAuthor(String authorName);
 
