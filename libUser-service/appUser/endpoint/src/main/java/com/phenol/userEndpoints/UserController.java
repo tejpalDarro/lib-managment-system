@@ -41,9 +41,9 @@ public class UserController {
 
     // BorrowBooks
 
-    @PostMapping("/borrow/{id}")
-    public TransactionDTO createBorrow(@PathVariable Long id) {
-        return userServices.createBorrowBook(id);
-    }
+//    @PostMapping("/borrow/{id}")
+//    public TransactionDTO createBorrow(@PathVariable Long id) {
+//        return userServices.createBorrowBook(id);
+//    }
 
 }

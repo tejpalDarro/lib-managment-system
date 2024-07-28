@@ -52,22 +52,22 @@ public class UserServiceImpl implements UserServices {
         restTemplate.getForObject(url, BookDTO.class);
         return null;
     }
-
-    @Override
-    public ResponseEntity<TransactionDTO> createBorrowBook(Long id) {
-        // check the book
-        String bookUrl = "http://localhost:8080/books/" + id;
-        String transactionUrl = "http://localhost:8080/tran/" + id;
-        ResponseEntity<BookDTO> forEntity = restTemplate.getForEntity(bookUrl, BookDTO.class);
-        if (!forEntity.getStatusCode().is2xxSuccessful()) {
-            return ResponseEntity.notFound().build();
-        }
-        restTemplate.getForObject()
-        return ResponseEntity.ok().build();
-
-
-        // get the transaction
-    }
+//
+//    @Override
+//    public ResponseEntity<TransactionDTO> createBorrowBook(Long id) {
+//        // check the book
+//        String bookUrl = "http://localhost:8080/books/" + id;
+//        String transactionUrl = "http://localhost:8080/tran/" + id;
+//        ResponseEntity<BookDTO> forEntity = restTemplate.getForEntity(bookUrl, BookDTO.class);
+//        if (!forEntity.getStatusCode().is2xxSuccessful()) {
+//            return ResponseEntity.notFound().build();
+//        }
+//        //restTemplate.getForObject()
+//        return ResponseEntity.ok(TransactionDTO);
+//
+//
+//        // get the transaction
+//    }
 
 
 }

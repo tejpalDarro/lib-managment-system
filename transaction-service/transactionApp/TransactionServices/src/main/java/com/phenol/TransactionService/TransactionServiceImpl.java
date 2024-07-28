@@ -8,6 +8,7 @@ import com.phenol.transactionRepository.TransactionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @Service
@@ -44,5 +45,18 @@ public class TransactionServiceImpl implements TransactionServices{
     public List<TransactionDTO> getAllReturnTransaction(Type type) {
         List<Transactions> byTransactionType = transactionRepository.findByTransactionType(type);
         return  transactionMapper.getDTOList(byTransactionType);
+    }
+
+    @Override
+    public TransactionDTO createTran(Long userId, Long bookId, Type type) {
+        Transactions tran = new Transactions();
+        tran.setBookId(bookId);
+        tran.setUserId(userId);
+        tran.setDueDate(LocalDate.now().plusWeeks(1));
+        tran.setTransactionDate(LocalDate.now());
+        tran.setReturnDate(null);
+        tran.setTransactionType(type);
+        Transactions save = transactionRepository.save(tran);
+        return transactionMapper.getDTO(save);
     }
 }

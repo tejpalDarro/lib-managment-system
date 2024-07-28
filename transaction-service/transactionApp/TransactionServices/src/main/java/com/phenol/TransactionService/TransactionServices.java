@@ -18,4 +18,5 @@ public interface TransactionServices {
     List<TransactionDTO> getAllReturnTransaction(Type type);
 
 
+    TransactionDTO createTran(Long userId, Long bookId, Type type);
 }
