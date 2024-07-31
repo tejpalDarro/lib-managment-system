@@ -2,6 +2,7 @@ package com.phenol.bookservice.Entity;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+import com.phenol.bookservice.Entity.Books;
 
 import java.util.List;
 

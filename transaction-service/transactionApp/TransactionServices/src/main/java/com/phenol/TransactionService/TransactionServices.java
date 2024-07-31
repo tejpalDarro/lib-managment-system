@@ -9,7 +9,7 @@ import java.util.List;
 public interface TransactionServices {
     public List<Transactions> getAllTransaction();
 
-    Transactions createTransaction(Transactions transactions);
+    TransactionDTO createTransaction(Transactions transactions);
 
     void deleteTransaction(Transactions transactions);
 

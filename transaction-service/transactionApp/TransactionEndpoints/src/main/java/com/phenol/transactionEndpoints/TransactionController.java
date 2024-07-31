@@ -33,8 +33,8 @@ public class TransactionController {
     }
 
     @PostMapping("/post")
-    public Transactions postTransaction(@RequestBody Transactions transactions) {
-        Transactions transaction = transactionServices.createTransaction(transactions);
+    public TransactionDTO postTransaction(@RequestBody Transactions transactions) {
+        TransactionDTO transaction = transactionServices.createTransaction(transactions);
         kafkaTransactionProducer.sendMessage("Created transactions with Id: " + transaction.getId());
         return transaction;
     }
