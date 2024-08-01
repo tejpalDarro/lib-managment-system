@@ -1,4 +1,6 @@
 spring:
+  application:
+    name: book-service-client
   datasource:
     driver-class-name: org.h2.Driver
     url: jdbc:h2:mem:mydb
@@ -13,6 +15,23 @@ spring:
     hibernate:
       ddl-auto: create-drop
     show-sql: true
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: ${EUREKA_URI:http://host.docker.internal:8761/eureka}
+#  instance:
+#    preferIpAddress: true
 
-server:
-  port: 8080
+#eureka:
+#  client:
+#    serviceUrl:
+#      defaultZone: ${EUREKA_URI:http://localhost:8761/eureka}
+#  instance:
+#    preferIpAddress: true
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: ${EUREKA_URI:http://192.168.53.1:8761/eureka}
+  instance:
+    preferIpAddress: true

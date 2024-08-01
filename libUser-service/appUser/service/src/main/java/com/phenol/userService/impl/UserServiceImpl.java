@@ -1,16 +1,12 @@
 package com.phenol.userService.impl;
 
-import com.phenol.bookservice.Entity.Books;
-import com.phenol.bookservice.dto.BookDTO;
+import com.phenol.book.BookDTO;
 import com.phenol.libuserservice.LibUserEntity;
 import com.phenol.libuserservice.UserRepository;
 import com.phenol.libuserservice.dto.LibUserDTO;
-import com.phenol.transactionDomain.com.phenol.transactionDomain.TransactionDTO;
 import com.phenol.userService.UserServices;
 import com.phenol.userService.mapper.LibUserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
@@ -46,12 +42,12 @@ public class UserServiceImpl implements UserServices {
         userRepository.deleteById(id);
     }
 
-    @Override
-    public List<BookDTO> getBooksById(List<Integer> ids) {
-        String url = "http://localhost:8080/books/";
-        restTemplate.getForObject(url, BookDTO.class);
-        return null;
-    }
+//    @Override
+//    public List<BookDTO> getBooksById(List<Integer> ids) {
+//        String url = "http://localhost:8080/books/";
+//        restTemplate.getForObject(url, BookDTO.class);
+//        return null;
+//    }
 //
 //    @Override
 //    public ResponseEntity<TransactionDTO> createBorrowBook(Long id) {

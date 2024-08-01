@@ -12,6 +12,7 @@ import org.springframework.web.client.RestTemplate;
 @EntityScan(basePackageClasses = {com.phenol.libuserservice.LibUserEntity.class})
 @EnableJpaRepositories(basePackageClasses = {com.phenol.libuserservice.UserRepository.class})
 @ComponentScan(basePackages = {"com.phenol"})
+
 public class UserApplication {
     public static void main(String[] args) {
         SpringApplication.run(UserApplication.class, args);

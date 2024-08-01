@@ -11,6 +11,7 @@
 	<groupId>com.phenol</groupId>
 	<artifactId>eureka-server</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
 	<name>eureka-server</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
@@ -20,7 +21,9 @@
 	<developers>
 		<developer/>
 	</developers>
-<!--	<packaging>pom</packaging>-->
+	<modules>
+		<module>EurekaApp</module>
+	</modules>
 	<scm>
 		<connection/>
 		<developerConnection/>

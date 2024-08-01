@@ -18,7 +18,11 @@
     <file url="file://$PROJECT_DIR$/book-service/kafka/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/book-service/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/book-service/src/main/resources" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server/EurekaApp/EurekaStartup/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server/EurekaApp/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server/EurekaApp/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/eureka-server/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/eureka-server/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/libUser-service/appUser/endpoint/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/libUser-service/appUser/libUserDomain/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/libUser-service/appUser/libUserRepository/src/main/java" charset="UTF-8" />

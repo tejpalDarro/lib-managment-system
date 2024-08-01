@@ -18,9 +18,9 @@ public class BookApplication {
     public static void main(String[] args) {
         SpringApplication.run(BookApplication.class, args);
     }
-    @Bean(initMethod = "start", destroyMethod = "stop")
-    public Server inMemoryH2DatabaseaServer() throws SQLException {
-        return Server.createTcpServer(
-                "-tcp", "-tcpAllowOthers", "-tcpPort", "9090");
-    }
+//    @Bean(initMethod = "start", destroyMethod = "stop")
+//    public Server inMemoryH2DatabaseaServer() throws SQLException {
+//        return Server.createTcpServer(
+//                "-tcp", "-tcpAllowOthers", "-tcpPort", "9090");
+//    }
 }
