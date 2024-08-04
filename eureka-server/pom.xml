@@ -23,6 +23,7 @@
 	</developers>
 	<modules>
 		<module>EurekaApp</module>
+		<module>eurekaDocker</module>
 	</modules>
 	<scm>
 		<connection/>

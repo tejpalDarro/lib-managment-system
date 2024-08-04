@@ -1,25 +1,21 @@
-# Stage 1: Build the application
-FROM maven:3.8.4-openjdk-17-slim AS build
+FROM maven:3.8.6-eclipse-temurin-17-alpine AS build
 WORKDIR /app
 
-# Copy the Maven POM file
-COPY pom.xml .
 
-# Copy the rest of the application code
-COPY app app
+COPY .. transaction-service/
 
-# Build the application with Maven
-RUN mvn clean package -DskipTests
 
-# Stage 2: Use a smaller OpenJDK 17 image to run the application
-FROM adoptopenjdk/openjdk17:alpine-jre
+RUN mvn clean package -f transaction-service/pom.xml -DskipTests
+
+
+FROM openjdk:17-jdk-slim
+
 WORKDIR /app
 
-# Copy the built artifact from the previous stage
-COPY --from=build /app/app/target/*.jar app.jar
 
-# Expose the port
-EXPOSE 8080
 
-# Command to run the application
-CMD ["java", "-jar", "app.jar"]
+COPY --from=build /app/transaction-service/transactionApp/TransactionStartup/target/*.jar app.jar
+
+EXPOSE 8083
+
+ENTRYPOINT ["java", "-jar", "app.jar"]

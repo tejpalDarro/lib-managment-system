@@ -23,6 +23,7 @@
     </developers>
     <modules>
         <module>appUser</module>
+        <module>userDocker</module>
     </modules>
     <scm>
         <connection/>
