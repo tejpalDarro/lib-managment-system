@@ -28,6 +28,7 @@ public class TransactionController {
 
     @GetMapping("/test")
     public String test() {
+        kafkaTransactionProducer.sendMessageToNotification("test message");
         return "Hello Transaction!";
     }
 
@@ -53,19 +54,19 @@ public class TransactionController {
     // creating a transaction
     @PostMapping("/createTran/{userId}/{bookId}/{type}")
     public ResponseEntity<?> createTran(@PathVariable Long userId, @PathVariable Long bookId, @PathVariable Type type) {
+        String url = "http://notification/notif/create/" + userId + "/" + bookId + "/" + type;
         TransactionDTO tran = transactionServices.createTran(userId, bookId, type);
-        String url = "http://notification/notif/create";
-//        restTemplate.postForEntity(url, )
-        kafkaTransactionProducer.sendMessage("Created transaction with Id: " + tran.getId() + " and books with" + tran.getBookId());
+        kafkaTransactionProducer.sendMessageToNotification("Created transaction with Id: " + tran.getId() + " and books with" + tran.getBookId());
         return ResponseEntity.ok().body(tran);
     }
 
     // Return a book
     @PostMapping("/setTran/{tranId}/{returnDate}")
     public ResponseEntity<?> setTran(@PathVariable Long tranId, @PathVariable LocalDate returnDate) {
+        String url = "http://notification/notif/create/" + userId + "/" + bookId + "/" + type;
         System.out.println(tranId);
         System.out.println(returnDate);
-        kafkaTransactionProducer.sendMessage("created transaction with Id: " + tranId + " with returnDate: " + returnDate);
+        kafkaTransactionProducer.sendMessageToNotification("created transaction with Id: " + tranId + " with returnDate: " + returnDate);
         return ResponseEntity.ok().build();
     }
 

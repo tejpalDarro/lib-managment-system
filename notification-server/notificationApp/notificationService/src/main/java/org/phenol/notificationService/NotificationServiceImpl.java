@@ -36,4 +36,15 @@ public class NotificationServiceImpl implements NotificationService{
         NoficationEntity save = notificationRepository.save(e);
         return mapper.getDTO(save);
     }
+
+    @Override
+    public NotificationDTO createNotificationWithFields(Long userId, Long bookId, Type type) {
+        NoficationEntity e = new NoficationEntity();
+        e.setType(type);
+        e.setBookId(bookId);
+        e.setUserId(userId);
+        e.setCreatedAt(LocalDate.now());
+        notificationRepository.save(e);
+        return mapper.getDTO(e);
+    }
 }

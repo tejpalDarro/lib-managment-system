@@ -14,9 +14,22 @@ public class KafkaTransactionProducer {
     private KafkaTemplate<String, String> kafkaTemplate;
 
     private final String topic = "amdocs.network.libmanagement.transactions";
+    private final String notificationTopic = "amdocs.network.libmanagement.transactions.notification";
 
     public void sendMessage(String message) {
         CompletableFuture<SendResult<String, String>> future =  kafkaTemplate.send(topic, message);
+        future.whenComplete((res, ex) -> {
+            if (ex == null) {
+                System.out.println("Success!");
+            } else {
+                System.out.println("failure!");
+            }
+        });
+
+    }
+
+    public void sendMessageToNotification(String message) {
+        CompletableFuture<SendResult<String, String>> future =  kafkaTemplate.send(notificationTopic, message);
         future.whenComplete((res, ex) -> {
             if (ex == null) {
                 System.out.println("Success!");

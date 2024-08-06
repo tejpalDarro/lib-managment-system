@@ -18,9 +18,9 @@ public class NotificationController {
         return "Hello Notification Test!";
     }
 
-    @PostMapping("/create")
-    public ResponseEntity<?> createNotification(@RequestBody NoficationEntity data) {
-        NotificationDTO dto = notificationService.createNotification(data);
+    @PostMapping("/create/{bookId}/{userId}/{type}")
+    public ResponseEntity<?> createNotification(@PathVariable Long userId, @PathVariable Long bookId, @PathVariable Type type) {
+        NotificationDTO dto = notificationService.createNotificationWithFields(userId, bookId, type);
         return ResponseEntity.ok(dto);
     }
 

@@ -25,6 +25,7 @@ public class bookController {
     // testing the get request
     @GetMapping("/test")
     public String test() {
+        kafkaProducerService.sendMessage("Hello books");
         return "Hello! ";
     }
 

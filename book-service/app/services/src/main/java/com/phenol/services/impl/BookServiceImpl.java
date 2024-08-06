@@ -32,9 +32,14 @@ public class BookServiceImpl implements BookServices {
     }
 
     @Override
-    public BookDTO updateBook(Books book) throws Exception {
-        Books user = libRepository.findById(book.getBookId()).orElseThrow(() -> new Exception("user Not found"));
-        return new BookDTO();
+    public BookDTO updateBook(Books boo) throws Exception {
+        libRepository.findById(boo.getBookId()).orElseThrow(() -> new Exception("user Not found"));
+        Books newBook = new Books();
+        newBook.setAuthorName(boo.getAuthorName());
+        newBook.setTitle(boo.getTitle());
+        newBook.setPublicationDate(boo.getPublicationDate());
+        Books b =  libRepository.save(newBook);
+        return bookMapper.toDto(b);
     }
 
     @Override

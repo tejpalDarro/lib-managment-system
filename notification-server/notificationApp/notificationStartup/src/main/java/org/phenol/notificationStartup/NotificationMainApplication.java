@@ -11,7 +11,10 @@ import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 @SpringBootApplication
 @EnableJpaRepositories(basePackageClasses = {NotificationRepository.class})
 @EntityScan(basePackageClasses = {NoficationEntity.class})
-@ComponentScan(basePackageClasses = {org.phenol.notificationDomain.NotificationController.class, org.phenol.notificationService.NotificationService.class, org.phenol.mapper.NotificationMapper.class})
+@ComponentScan(basePackageClasses = {org.phenol.notificationDomain.NotificationController.class,
+        org.phenol.notificationService.NotificationService.class,
+        org.phenol.mapper.NotificationMapper.class,
+        com.phenol.notificationKafka.NotificationKafkaConsumer.class})
 public class NotificationMainApplication {
     public static void main(String[] args) {
         SpringApplication.run(NotificationMainApplication.class, args);

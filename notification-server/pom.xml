@@ -23,7 +23,8 @@
 	</developers>
     <modules>
         <module>notificationApp</module>
-    </modules>
+		<module>notificationKafka</module>
+	</modules>
     <scm>
 		<connection/>
 		<developerConnection/>
