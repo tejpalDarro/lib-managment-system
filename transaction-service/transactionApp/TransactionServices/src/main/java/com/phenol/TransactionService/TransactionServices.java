@@ -11,7 +11,7 @@ public interface TransactionServices {
 
     TransactionDTO createTransaction(Transactions transactions);
 
-    void deleteTransaction(Transactions transactions);
+    void deleteTransaction(Long id);
 
     List<TransactionDTO> getAllBorrowTransaction(Type transactionType);
 

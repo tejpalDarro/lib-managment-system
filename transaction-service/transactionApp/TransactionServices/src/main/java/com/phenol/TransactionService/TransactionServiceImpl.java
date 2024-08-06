@@ -1,7 +1,6 @@
 package com.phenol.TransactionService;
 
 import com.phenol.TransactionService.mapper.TransactionMapper;
-import com.phenol.notification.NotificationService;
 import com.phenol.transactionDomain.TransactionEntity.Transactions;
 import com.phenol.transactionDomain.Type;
 import com.phenol.transactionDomain.com.phenol.transactionDomain.TransactionDTO;
@@ -15,8 +14,6 @@ import java.util.List;
 @Service
 public class TransactionServiceImpl implements TransactionServices{
 
-    @Autowired
-    private NotificationService notificationService;
 
     @Autowired
     private TransactionRepository transactionRepository;
@@ -32,13 +29,12 @@ public class TransactionServiceImpl implements TransactionServices{
     @Override
     public TransactionDTO createTransaction(Transactions transactions) {
          Transactions t = transactionRepository.save(transactions);
-         notificationService.created(t);
          return transactionMapper.getDTO(t);
     }
 
     @Override
-    public void deleteTransaction(Transactions transactions) {
-        transactionRepository.delete(transactions);
+    public void deleteTransaction(Long id) {
+        transactionRepository.deleteById(id);
     }
 
     @Override

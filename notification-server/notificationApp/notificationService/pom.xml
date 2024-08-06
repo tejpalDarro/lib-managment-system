@@ -4,35 +4,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
-        <groupId>com.transaction</groupId>
-        <artifactId>transactionApp</artifactId>
+        <groupId>org.example</groupId>
+        <artifactId>notificationApp</artifactId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
 
+    <artifactId>notificationService</artifactId>
     <dependencies>
         <dependency>
-            <groupId>com.transaction</groupId>
-            <artifactId>TransactionDomain</artifactId>
+            <groupId>org.example</groupId>
+            <artifactId>notificationDomain</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.transaction</groupId>
-            <artifactId>TransactionServices</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.transaction</groupId>
-            <artifactId>TransactionEndpoints</artifactId>
-            <version>0.0.1-SNAPSHOT</version>
-        </dependency>
-        <dependency>
-            <groupId>com.transaction</groupId>
-            <artifactId>TransactionRepository</artifactId>
+            <groupId>org.example</groupId>
+            <artifactId>notificationRepository</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
     </dependencies>
-
-    <artifactId>TransactionStartup</artifactId>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>

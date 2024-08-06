@@ -8,6 +8,7 @@ import com.phenol.transactionDomain.com.phenol.transactionDomain.TransactionDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.client.RestTemplate;
 
 import java.time.LocalDate;
 import java.util.List;
@@ -15,6 +16,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/tran")
 public class TransactionController {
+
+    @Autowired
+    private RestTemplate restTemplate;
 
     @Autowired
     private KafkaTransactionProducer kafkaTransactionProducer;
@@ -39,20 +43,24 @@ public class TransactionController {
         return transaction;
     }
 
-    @DeleteMapping("/delete")
-    public ResponseEntity<?> deleteTransaction(@RequestBody Transactions transactions) {
-        transactionServices.deleteTransaction(transactions);
-        kafkaTransactionProducer.sendMessage("Deleted transaction with Id: " + transactions.getId());
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteTransaction(@PathVariable Long id) {
+        transactionServices.deleteTransaction(id);
+        kafkaTransactionProducer.sendMessage("Deleted transaction with Id: " + id);
         return ResponseEntity.ok().build();
     }
 
+    // creating a transaction
     @PostMapping("/createTran/{userId}/{bookId}/{type}")
     public ResponseEntity<?> createTran(@PathVariable Long userId, @PathVariable Long bookId, @PathVariable Type type) {
         TransactionDTO tran = transactionServices.createTran(userId, bookId, type);
+        String url = "http://notification/notif/create";
+//        restTemplate.postForEntity(url, )
         kafkaTransactionProducer.sendMessage("Created transaction with Id: " + tran.getId() + " and books with" + tran.getBookId());
         return ResponseEntity.ok().body(tran);
     }
 
+    // Return a book
     @PostMapping("/setTran/{tranId}/{returnDate}")
     public ResponseEntity<?> setTran(@PathVariable Long tranId, @PathVariable LocalDate returnDate) {
         System.out.println(tranId);
@@ -60,6 +68,14 @@ public class TransactionController {
         kafkaTransactionProducer.sendMessage("created transaction with Id: " + tranId + " with returnDate: " + returnDate);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/restTest")
+    public void getRestCall() {
+        String url = "http://notification/notif/test";
+        String s = String.valueOf(restTemplate.getForEntity(url, String.class));
+        System.out.println("ok! rest template" + s);
+    }
+
     // BORROW
 
     @GetMapping("/getBorrow")
